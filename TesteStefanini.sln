@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A24FB3E8-328F-4EB3-9FC4-F8997CA5B292}"
+	ProjectSection(SolutionItems) = preProject
+		docs\README.md = docs\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9CFE7A14-47A4-4AFB-A7FD-83365E9808F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{EB6E5254-9C14-49B1-A4D6-2838B043C11B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contextos", "Contextos", "{16636947-4311-42CF-80B2-B313C60E60BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteStefanini.WebApi", "src\TesteStefanini.WebApi\TesteStefanini.WebApi.csproj", "{47EE578C-4898-4CBA-86A7-B584A5464032}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cadastros", "Cadastros", "{F20B952C-F863-4F00-A2DE-52A0B05371A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Aplicacoes", "1-Aplicacoes", "{C136CCC4-4C55-4696-9F18-84C61B588F69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Dominios", "2-Dominios", "{1348971B-617C-456A-AB5E-721C2C87C1D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{E2535993-24F4-4CB3-A4D9-069069848BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteStefanini.Cadastros.Dominios", "src\TesteStefanini.Cadastros.Dominios\TesteStefanini.Cadastros.Dominios.csproj", "{16EF9807-BDA6-43D8-B51A-C73CD778E127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteStefanini.Cadastros.Aplicacoes", "src\TesteStefanini.Cadastros.Aplicacoes\TesteStefanini.Cadastros.Aplicacoes.csproj", "{F676EDC8-B1A3-472B-876B-78680E0DC03D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{25E00CA8-8ECB-421D-91D0-609DD99C9937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteStefanini.Cadastros.Infra.Data", "src\TesteStefanini.Cadastros.Infra.Data\TesteStefanini.Cadastros.Infra.Data.csproj", "{F9F39943-7E7A-4108-8B54-09EB108BC43D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47EE578C-4898-4CBA-86A7-B584A5464032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47EE578C-4898-4CBA-86A7-B584A5464032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47EE578C-4898-4CBA-86A7-B584A5464032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47EE578C-4898-4CBA-86A7-B584A5464032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16EF9807-BDA6-43D8-B51A-C73CD778E127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16EF9807-BDA6-43D8-B51A-C73CD778E127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16EF9807-BDA6-43D8-B51A-C73CD778E127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16EF9807-BDA6-43D8-B51A-C73CD778E127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F676EDC8-B1A3-472B-876B-78680E0DC03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F676EDC8-B1A3-472B-876B-78680E0DC03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F676EDC8-B1A3-472B-876B-78680E0DC03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F676EDC8-B1A3-472B-876B-78680E0DC03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F39943-7E7A-4108-8B54-09EB108BC43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F39943-7E7A-4108-8B54-09EB108BC43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F39943-7E7A-4108-8B54-09EB108BC43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F39943-7E7A-4108-8B54-09EB108BC43D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB6E5254-9C14-49B1-A4D6-2838B043C11B} = {9CFE7A14-47A4-4AFB-A7FD-83365E9808F1}
+		{16636947-4311-42CF-80B2-B313C60E60BD} = {9CFE7A14-47A4-4AFB-A7FD-83365E9808F1}
+		{47EE578C-4898-4CBA-86A7-B584A5464032} = {EB6E5254-9C14-49B1-A4D6-2838B043C11B}
+		{F20B952C-F863-4F00-A2DE-52A0B05371A0} = {16636947-4311-42CF-80B2-B313C60E60BD}
+		{C136CCC4-4C55-4696-9F18-84C61B588F69} = {F20B952C-F863-4F00-A2DE-52A0B05371A0}
+		{1348971B-617C-456A-AB5E-721C2C87C1D6} = {F20B952C-F863-4F00-A2DE-52A0B05371A0}
+		{E2535993-24F4-4CB3-A4D9-069069848BF3} = {F20B952C-F863-4F00-A2DE-52A0B05371A0}
+		{16EF9807-BDA6-43D8-B51A-C73CD778E127} = {1348971B-617C-456A-AB5E-721C2C87C1D6}
+		{F676EDC8-B1A3-472B-876B-78680E0DC03D} = {C136CCC4-4C55-4696-9F18-84C61B588F69}
+		{25E00CA8-8ECB-421D-91D0-609DD99C9937} = {E2535993-24F4-4CB3-A4D9-069069848BF3}
+		{F9F39943-7E7A-4108-8B54-09EB108BC43D} = {25E00CA8-8ECB-421D-91D0-609DD99C9937}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C56B392-7696-4BD6-9A5E-E1A3A5FEE397}
+	EndGlobalSection
+EndGlobal
