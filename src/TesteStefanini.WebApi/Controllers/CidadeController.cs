@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TesteStefanini.Cadastros.Aplicacoes.DTOs.Cidades;
 using TesteStefanini.Cadastros.Aplicacoes.Interfaces.Cidades;
 
 namespace TesteStefanini.WebApi.Controllers
@@ -15,7 +16,7 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPost]
         [Route("cidade")]
-        public IActionResult Cadastrar()
+        public IActionResult Cadastrar([FromBody] CidadeDto cidadeDto)
         {
             try
             {
@@ -31,7 +32,7 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPut]
         [Route("cidade")]
-        public IActionResult Atualizar()
+        public IActionResult Atualizar([FromBody] CidadeDto cidadeDto)
         {
             try
             {

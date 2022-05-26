@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TesteStefanini.Cadastros.Aplicacoes.DTOs.Pessoas;
 using TesteStefanini.Cadastros.Aplicacoes.Interfaces.Pessoas;
 
 namespace TesteStefanini.WebApi.Controllers
@@ -15,7 +16,7 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPost]
         [Route("pessoa")]
-        public IActionResult Cadastrar()
+        public IActionResult Cadastrar([FromBody] PessoaDto pessoaDto)
         {
             try
             {
@@ -31,7 +32,7 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPut]
         [Route("pessoa")]
-        public IActionResult Atualizar()
+        public IActionResult Atualizar([FromBody] PessoaDto pessoaDto)
         {
             try
             {
