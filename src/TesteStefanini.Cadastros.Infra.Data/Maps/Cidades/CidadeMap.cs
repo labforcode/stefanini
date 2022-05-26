@@ -13,6 +13,7 @@ namespace TesteStefanini.Cadastros.Infra.Data.Maps.Cidades
 
             builder.Property(c => c.Id)
                    .HasColumnName("id")
+                   .UseIdentityColumn()
                    .IsRequired();
 
             builder.Property(c => c.Nome)

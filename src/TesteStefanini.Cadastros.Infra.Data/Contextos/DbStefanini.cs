@@ -17,8 +17,6 @@ namespace TesteStefanini.Cadastros.Infra.Data.Contextos
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.HasDefaultSchema("public");
-
             builder.ApplyConfiguration(new CidadeMap());
             builder.ApplyConfiguration(new PessoaMap());
         }

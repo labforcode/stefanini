@@ -1,4 +1,6 @@
-﻿namespace TesteStefanini.WebApi
+﻿using TesteStefanini.Cadastros.Infra.CrossCutting;
+
+namespace TesteStefanini.WebApi
 {
     public class Startup
     {
@@ -48,7 +50,7 @@
         /// <param name="services"></param>
         private void Injector(IServiceCollection services)
         {
-            //BootstraperInjection.Injector(services, Configuration);
+            BootstraperInjection.Injector(services, Configuration);
         }
     }
 }
