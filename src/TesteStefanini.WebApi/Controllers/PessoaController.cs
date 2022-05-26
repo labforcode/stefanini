@@ -45,6 +45,22 @@ namespace TesteStefanini.WebApi.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("pessoa/id/{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Serviço indisponível, tente novamente mais tarde");
+            }
+        }
+
         [HttpGet]
         [Route("pessoa/id/{id}")]
         public IActionResult ObterPorId(int id)

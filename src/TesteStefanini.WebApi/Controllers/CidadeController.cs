@@ -45,6 +45,22 @@ namespace TesteStefanini.WebApi.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("cidade/id/{id}")]
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+
+
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Serviço indisponível, tente novamente mais tarde");
+            }
+        }
+
         [HttpGet]
         [Route("cidade/id/{id}")]
         public IActionResult ObterPorId(int id)
@@ -79,7 +95,7 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("cidade/uf/{uf}")]
-        public IActionResult ObterPorUf()
+        public IActionResult ObterPorUf(string uf)
         {
             try
             {
