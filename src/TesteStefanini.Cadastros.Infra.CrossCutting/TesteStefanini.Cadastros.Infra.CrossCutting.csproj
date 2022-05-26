@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TesteStefanini.Cadastros.Aplicacoes\TesteStefanini.Cadastros.Aplicacoes.csproj" />
     <ProjectReference Include="..\TesteStefanini.Cadastros.Infra.Data\TesteStefanini.Cadastros.Infra.Data.csproj" />
   </ItemGroup>
 
