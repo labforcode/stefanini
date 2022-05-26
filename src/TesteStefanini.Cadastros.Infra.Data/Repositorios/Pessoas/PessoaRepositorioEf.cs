@@ -9,5 +9,20 @@ namespace TesteStefanini.Cadastros.Infra.Data.Repositorios.Pessoas
         public PessoaRepositorioEf(DbStefanini context) : base(context)
         {
         }
+
+        public Task<Pessoa> ObterPorCpf(string cpf)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Pessoa> ObterPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Pessoa>> ObterTodos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
