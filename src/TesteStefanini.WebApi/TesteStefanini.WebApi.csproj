@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TesteStefanini.Cadastros.Infra.CrossCutting\TesteStefanini.Cadastros.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
