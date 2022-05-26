@@ -8,6 +8,10 @@ namespace TesteStefanini.Cadastros.Infra.CrossCutting
         public static void Injector(IServiceCollection services, IConfiguration configuration)
         {
             DbStefaniniInjection.ContextInject(services, configuration);
+
+            InfraInjection.InfraRegister(services);
+
+            RepositoryEfInjection.RepositoryInject(services);
         }
     }
 }
