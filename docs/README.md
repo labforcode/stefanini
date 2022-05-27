@@ -25,5 +25,8 @@ docker volume create pg-stefanini
 docker run -ti --network=dev-local --ip 172.18.0.176 -p 5434:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=st3fan1n1@!" -d mcr.microsoft.com/mssql/server
 
 
-
-
+## Docker Development
+docker build -t stefanini/cadastro -f src/TesteStefanini.WebApi/Dockerfile .
+docker push stefanini/cadastro
+docker pull stefanini/cadastro
+docker run -ti --network=dev-local --ip 172.18.0.56 --name stefanini-cadastro -d -e ASPNETCORE_ENVIRONMENT=Development -p 3500:80 --rm stefanini/cadastro
