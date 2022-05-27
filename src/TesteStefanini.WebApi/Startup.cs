@@ -1,4 +1,5 @@
 ﻿using TesteStefanini.Cadastros.Infra.CrossCutting;
+using TesteStefanini.WebApi.Configurations;
 
 namespace TesteStefanini.WebApi
 {
@@ -21,6 +22,7 @@ namespace TesteStefanini.WebApi
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             Injector(services);
+            services.AddAutoMapperSetup();
         }
 
         /// <summary>
