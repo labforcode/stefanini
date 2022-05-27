@@ -6,12 +6,12 @@ using TesteStefanini.Cadastros.Infra.Data.Repositorios.Pessoas;
 
 namespace TesteStefanini.Cadastros.Infra.CrossCutting
 {
-    public class RepositoryEfInjection
+    public class RepositoryInjection
     {
         public static void RepositoryInject(IServiceCollection services)
         {
-            services.AddScoped<ICidadeRepositorioEf, CidadeRepositorioEf>();
-            services.AddScoped<IPessoaRepositorioEf, PessoaRepositorioEf>();
+            services.AddScoped<ICidadeRepositorio, CidadeRepositorio>();
+            services.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
         }
     }
 }

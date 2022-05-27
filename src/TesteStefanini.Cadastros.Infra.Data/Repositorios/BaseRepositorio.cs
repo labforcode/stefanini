@@ -1,18 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Data;
 using TesteStefanini.Cadastros.Dominios.Interfaces.Repositorios;
 using TesteStefanini.Cadastros.Infra.Data.Contextos;
 
 namespace TesteStefanini.Cadastros.Infra.Data.Repositorios
 {
-    public class BaseRepositorioEf<T> : IBaseRepositorioEf<T> where T : class
+    public class BaseRepositorio<T> : IBaseRepositorio<T> where T : class
     {
         protected DbStefanini Context;
         private readonly DbSet<T> _dbSet;
+        private readonly string _connectionStrings;
+        public IDbConnection Connection => new SqlConnection(_connectionStrings);
 
-        public BaseRepositorioEf(DbStefanini context)
+        public BaseRepositorio(IConfiguration configuration, DbStefanini context)
         {
             Context = context;
             _dbSet = context.Set<T>();
+            _connectionStrings = configuration.GetConnectionString("dbstefanini");
         }
 
         public void Add(T t)

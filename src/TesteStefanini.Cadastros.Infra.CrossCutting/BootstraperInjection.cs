@@ -13,7 +13,7 @@ namespace TesteStefanini.Cadastros.Infra.CrossCutting
 
             InfraInjection.InfraRegister(services);
 
-            RepositoryEfInjection.RepositoryInject(services);
+            RepositoryInjection.RepositoryInject(services);
         }
     }
 }

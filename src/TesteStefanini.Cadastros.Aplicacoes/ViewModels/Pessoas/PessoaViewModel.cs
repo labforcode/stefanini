@@ -12,6 +12,8 @@
 
         public int CidadeId { get; set; }
 
-        public string CidadeNome { get; set; }
+        public string Cidade { get; set; }
+
+        public string Uf { get; set; }
     }
 }

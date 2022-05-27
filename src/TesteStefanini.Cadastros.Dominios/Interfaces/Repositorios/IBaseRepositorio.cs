@@ -1,6 +1,6 @@
 ﻿namespace TesteStefanini.Cadastros.Dominios.Interfaces.Repositorios
 {
-    public interface IBaseRepositorioEf<T> : IDisposable where T : class
+    public interface IBaseRepositorio<T> : IDisposable where T : class
     {
         void Add(T t);
 
