@@ -9,7 +9,7 @@ namespace TesteStefanini.Cadastros.Infra.Data.Repositorios.Cidades
     public class CidadeRepositorio : BaseRepositorio<Cidade>, ICidadeRepositorio
     {
         private readonly string _query = @"SELECT c.id AS ""Id"",
-                                                  c.nome AS ""Cidade"",
+                                                  c.nome AS ""Nome"",
                                                   c.uf AS ""Uf"" 
                                            FROM [dbstefanini].[dbo].[cidades] AS c";
 

@@ -21,7 +21,7 @@ docker network create --gateway 172.18.0.1 --subnet 172.18.0.0/16 dev-local
 ## Criar o volume
 docker volume create pg-stefanini
 
-## Executar o container do Postgres para a API Tecnomyl
+## Executar o container do Postgres para a API Stefanini
 docker run -ti --network=dev-local --ip 172.18.0.176 -p 5434:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=st3fan1n1@!" -d mcr.microsoft.com/mssql/server
 
 

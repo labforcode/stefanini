@@ -16,13 +16,18 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPost]
         [Route("cidade")]
-        public IActionResult Cadastrar([FromBody] CidadeDto cidadeDto)
+        public IActionResult Adicionar([FromBody] CidadeDto cidadeDto)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos.");
+                }
 
+                _cidadeAppService.Adicionar(cidadeDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -36,9 +41,14 @@ namespace TesteStefanini.WebApi.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos.");
+                }
 
+                _cidadeAppService.Atualizar(cidadeDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -52,9 +62,11 @@ namespace TesteStefanini.WebApi.Controllers
         {
             try
             {
+                var cidadeDto = new CidadeDto { Id = id };
 
+                _cidadeAppService.Excluir(cidadeDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -64,13 +76,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("cidade/id/{id}")]
-        public IActionResult ObterPorId(int id)
+        public async Task<IActionResult> ObterPorIdAsync(int id)
         {
             try
             {
+                var cidade = await _cidadeAppService.ObterPorIdAsync(id);
 
-
-                return Ok();
+                return Ok(cidade);
             }
             catch (Exception)
             {
@@ -80,13 +92,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("cidade/nome/{nome}")]
-        public IActionResult ObterPorNome(string nome)
+        public async Task<IActionResult> ObterPorNomeAsync(string nome)
         {
             try
             {
+                var cidade = await _cidadeAppService.ObterPorNomeAsync(nome);
 
-
-                return Ok();
+                return Ok(cidade);
             }
             catch (Exception)
             {
@@ -96,13 +108,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("cidade/uf/{uf}")]
-        public IActionResult ObterPorUf(string uf)
+        public async Task<IActionResult> ObterPorUfAsync(string uf)
         {
             try
             {
+                var cidades = await _cidadeAppService.ObterPorUfAsync(uf);
 
-
-                return Ok();
+                return Ok(cidades);
             }
             catch (Exception)
             {
@@ -112,13 +124,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("cidades")]
-        public IActionResult ObterTodos()
+        public async Task<IActionResult> ObterTodosAsync()
         {
             try
             {
+                var cidades = await _cidadeAppService.ObterTodosAsync();
 
-
-                return Ok();
+                return Ok(cidades);
             }
             catch (Exception)
             {

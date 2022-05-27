@@ -16,13 +16,18 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpPost]
         [Route("pessoa")]
-        public IActionResult Cadastrar([FromBody] PessoaDto pessoaDto)
+        public IActionResult Adicionar([FromBody] PessoaDto pessoaDto)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos.");
+                }
 
+                _pessoaAppService.Adicionar(pessoaDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -36,9 +41,14 @@ namespace TesteStefanini.WebApi.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest("Dados inválidos.");
+                }
 
+                _pessoaAppService.Atualizar(pessoaDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -52,9 +62,11 @@ namespace TesteStefanini.WebApi.Controllers
         {
             try
             {
+                var pessoaDto = new PessoaDto { Id = id };
 
+                _pessoaAppService.Excluir(pessoaDto);
 
-                return Ok();
+                return Accepted();
             }
             catch (Exception)
             {
@@ -64,13 +76,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("pessoa/id/{id}")]
-        public IActionResult ObterPorId(int id)
+        public async Task<IActionResult> ObterPorIdAsync(int id)
         {
             try
             {
+                var pessoa = await _pessoaAppService.ObterPorIdAsync(id);
 
-
-                return Ok();
+                return Ok(pessoa);
             }
             catch (Exception)
             {
@@ -80,13 +92,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("pessoa/cpf/{cpf}")]
-        public IActionResult ObterPorCpf(string cpf)
+        public async Task<IActionResult> ObterPorCpfAsync(string cpf)
         {
             try
             {
+                var pessoa = await _pessoaAppService.ObterPorCpfAsync(cpf);
 
-
-                return Ok();
+                return Ok(pessoa);
             }
             catch (Exception)
             {
@@ -96,13 +108,13 @@ namespace TesteStefanini.WebApi.Controllers
 
         [HttpGet]
         [Route("pessoas")]
-        public IActionResult ObterTodos()
+        public async Task<IActionResult> ObterTodosAsync()
         {
             try
             {
+                var pessoas = await _pessoaAppService.ObterTodosAsync();
 
-
-                return Ok();
+                return Ok(pessoas);
             }
             catch (Exception)
             {
