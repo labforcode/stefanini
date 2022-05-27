@@ -11,12 +11,12 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Interfaces.Cidades
 
         void Excluir(CidadeDto cidadeDto);
 
-        Task<CidadeViewModel> ObterPorId(int id);
+        Task<CidadeViewModel> ObterPorIdAsync(int id);
 
-        Task<CidadeViewModel> ObterPorNome(string nome);
+        Task<CidadeViewModel> ObterPorNomeAsync(string nome);
 
-        Task<IEnumerable<CidadeViewModel>> ObterPorUf(string uf);
+        Task<IEnumerable<CidadeViewModel>> ObterPorUfAsync(string uf);
 
-        Task<IEnumerable<CidadeViewModel>> ObterTodos();
+        Task<IEnumerable<CidadeViewModel>> ObterTodosAsync();
     }
 }

@@ -11,10 +11,10 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Interfaces.Pessoas
 
         void Excluir(PessoaDto pessoaDto);
 
-        Task<PessoaViewModel> ObterPorId(int id);
+        Task<PessoaViewModel> ObterPorIdAsync(int id);
 
-        Task<PessoaViewModel> ObterPorCpf(string cpf);
+        Task<PessoaViewModel> ObterPorCpfAsync(string cpf);
 
-        Task<IEnumerable<PessoaViewModel>> ObterTodos();
+        Task<IEnumerable<PessoaViewModel>> ObterTodosAsync();
     }
 }

@@ -22,17 +22,17 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Services.Pessoas
 
         }
 
-        public Task<PessoaViewModel> ObterPorId(int id)
+        public Task<PessoaViewModel> ObterPorIdAsync(int id)
         {
             return null;
         }
 
-        public Task<PessoaViewModel> ObterPorCpf(string cpf)
+        public Task<PessoaViewModel> ObterPorCpfAsync(string cpf)
         {
             return null;
         }
 
-        public Task<IEnumerable<PessoaViewModel>> ObterTodos()
+        public Task<IEnumerable<PessoaViewModel>> ObterTodosAsync()
         {
             return null;
         }
