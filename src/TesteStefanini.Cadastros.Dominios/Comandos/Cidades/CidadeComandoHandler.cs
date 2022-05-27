@@ -28,12 +28,24 @@ namespace TesteStefanini.Cadastros.Dominios.Comandos.Cidades
 
         public void Atualizar(CidadeComando comando)
         {
-            throw new NotImplementedException();
+            var cidadeExistente = _cidadeRepositorio.ObterPorIdAsync(comando.Id).Result;
+            if (cidadeExistente == null) throw new Exception("Cidade não localizada.");
+
+            var cidade = new Cidade(cidadeExistente.Id,
+                                    comando.Nome,
+                                    comando.Uf);
+
+            _cidadeRepositorio.Update(cidade);
+            _uow.Commit();
         }
 
         public void Excluir(CidadeComando comando)
         {
-            throw new NotImplementedException();
+            var cidade = _cidadeRepositorio.ObterPorIdAsync(comando.Id).Result;
+            if (cidade == null) throw new Exception("Cidade não localizada.");
+
+            _cidadeRepositorio.Delete(cidade);
+            _uow.Commit();
         }
     }
 }

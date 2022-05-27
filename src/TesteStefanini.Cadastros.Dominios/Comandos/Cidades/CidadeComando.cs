@@ -2,12 +2,16 @@
 {
     public class CidadeComando 
     {
-        public CidadeComando(string nome,
+        public CidadeComando(int id,
+                             string nome,
                              string uf)
         {
+            Id = id;
             Nome = nome;
             Uf = uf;
         }
+
+        public int Id { get; set; }
 
         public string Nome { get; protected set; }
 
