@@ -40,24 +40,24 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Services.Cidades
             _cidadeComando.Excluir(comando);
         }
 
-        public Task<CidadeViewModel> ObterPorIdAsync(int id)
+        public async Task<CidadeViewModel> ObterPorIdAsync(int id)
         {
-            return null;
+            return _mapper.Map<CidadeViewModel>(await _cidadeRepositorio.ObterPorIdAsync(id));
         }
 
-        public Task<CidadeViewModel> ObterPorNomeAsync(string nome)
+        public async Task<CidadeViewModel> ObterPorNomeAsync(string nome)
         {
-            return null;
+            return _mapper.Map<CidadeViewModel>(await _cidadeRepositorio.ObterPorNomeAsync(nome));
         }
 
-        public Task<IEnumerable<CidadeViewModel>> ObterPorUfAsync(string uf)
+        public async Task<IEnumerable<CidadeViewModel>> ObterPorUfAsync(string uf)
         {
-            return null;
+            return _mapper.Map<IEnumerable<CidadeViewModel>>(await _cidadeRepositorio.ObterPorUfAsync(uf));
         }
 
-        public Task<IEnumerable<CidadeViewModel>> ObterTodosAsync()
+        public async Task<IEnumerable<CidadeViewModel>> ObterTodosAsync()
         {
-            return null;
+            return _mapper.Map<IEnumerable<CidadeViewModel>>(await _cidadeRepositorio.ObterTodosAsync());
         }
     }
 }

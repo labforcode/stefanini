@@ -40,19 +40,19 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Services.Pessoas
             _pessoaComando.Excluir(comando);
         }
 
-        public Task<PessoaViewModel> ObterPorIdAsync(int id)
+        public async Task<PessoaViewModel> ObterPorIdAsync(int id)
         {
-            return null;
+            return _mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorIdAsync(id));
         }
 
-        public Task<PessoaViewModel> ObterPorCpfAsync(string cpf)
+        public async Task<PessoaViewModel> ObterPorCpfAsync(string cpf)
         {
-            return null;
+            return _mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorCpfAsync(cpf));
         }
 
-        public Task<IEnumerable<PessoaViewModel>> ObterTodosAsync()
+        public async Task<IEnumerable<PessoaViewModel>> ObterTodosAsync()
         {
-            return null;
+            return _mapper.Map<IEnumerable<PessoaViewModel>>(await _pessoaRepositorio.ObterTodosAsync());
         }
     }
 }
