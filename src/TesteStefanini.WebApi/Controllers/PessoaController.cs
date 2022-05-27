@@ -57,12 +57,12 @@ namespace TesteStefanini.WebApi.Controllers
         }
 
         [HttpDelete]
-        [Route("pessoa/id/{id}")]
-        public IActionResult Deletar(int id)
+        [Route("pessoa/cpf/{cpf}")]
+        public IActionResult Deletar(string cpf)
         {
             try
             {
-                var pessoaDto = new PessoaDto { Id = id };
+                var pessoaDto = new PessoaDto { Cpf = cpf };
 
                 _pessoaAppService.Excluir(pessoaDto);
 

@@ -8,6 +8,8 @@ namespace TesteStefanini.Cadastros.Dominios.Interfaces.Repositorios.Pessoas
 
         Task<dynamic> ObterPorCpfAsync(string cpf);
 
+        Task<Pessoa> ObterPessoaPorCpfAsync(string cpf);
+
         Task<IEnumerable<dynamic>> ObterTodosAsync();
     }
 }

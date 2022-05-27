@@ -25,7 +25,7 @@ namespace TesteStefanini.Cadastros.Dominios.Comandos.Pessoas
             var cidade = _cidadeRepositorio.ObterPorIdAsync(comando.CidadeId).Result;
             if (cidade == null) throw new Exception("Cidade não localizada.");
 
-            var pessoaCadastrada = _pessoaRepositorio.ObterPorCpfAsync(comando.Cpf);
+            var pessoaCadastrada = _pessoaRepositorio.ObterPessoaPorCpfAsync(comando.Cpf).Result;
             if (pessoaCadastrada != null) throw new Exception("Pessoa já cadastrada.");
 
             var pessoa = new Pessoa(0,
@@ -44,7 +44,7 @@ namespace TesteStefanini.Cadastros.Dominios.Comandos.Pessoas
             var cidade = _cidadeRepositorio.ObterPorIdAsync(comando.CidadeId).Result;
             if (cidade == null) throw new Exception("Cidade não localizada.");
 
-            var pessoaCadastrada = _pessoaRepositorio.ObterPorCpfAsync(comando.Cpf);
+            var pessoaCadastrada = _pessoaRepositorio.ObterPessoaPorCpfAsync(comando.Cpf).Result;
             if (pessoaCadastrada == null) throw new Exception("Pessoa já cadastrada.");
 
             var pessoa = new Pessoa(pessoaCadastrada.Id,
@@ -59,7 +59,7 @@ namespace TesteStefanini.Cadastros.Dominios.Comandos.Pessoas
 
         public void Excluir(PessoaComando comando)
         {
-            var pessoaCadastrada = _pessoaRepositorio.ObterPorCpfAsync(comando.Cpf).Result;
+            var pessoaCadastrada = _pessoaRepositorio.ObterPessoaPorCpfAsync(comando.Cpf).Result;
             if (pessoaCadastrada == null) throw new Exception("Pessoa já cadastrada.");
 
             _pessoaRepositorio.Delete(pessoaCadastrada);

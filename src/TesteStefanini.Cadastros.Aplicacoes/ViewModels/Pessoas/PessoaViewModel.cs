@@ -8,6 +8,8 @@
 
         public string Nome { get; set; }
 
+        public int Idade { get; set; }
+
         public DateTime DataNascimento { get; set; }
 
         public int CidadeId { get; set; }

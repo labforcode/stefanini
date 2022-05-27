@@ -42,17 +42,48 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Services.Pessoas
 
         public async Task<PessoaViewModel> ObterPorIdAsync(int id)
         {
-            return _mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorIdAsync(id));
+            var pessoa = (PessoaViewModel)_mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorIdAsync(id));
+            pessoa = CalcularIdadePessoa(pessoa);
+
+            return pessoa;
         }
 
         public async Task<PessoaViewModel> ObterPorCpfAsync(string cpf)
         {
-            return _mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorCpfAsync(cpf));
+            var pessoa = _mapper.Map<PessoaViewModel>(await _pessoaRepositorio.ObterPorCpfAsync(cpf));
+            pessoa = CalcularIdadePessoa(pessoa);
+
+            return pessoa;
         }
 
         public async Task<IEnumerable<PessoaViewModel>> ObterTodosAsync()
         {
-            return _mapper.Map<IEnumerable<PessoaViewModel>>(await _pessoaRepositorio.ObterTodosAsync());
+            var listaPessoas = new List<PessoaViewModel>();
+            var pessoas = _mapper.Map<IEnumerable<PessoaViewModel>>(await _pessoaRepositorio.ObterTodosAsync());
+            foreach (var pessoa in pessoas)
+            {
+                var novaPessoa = CalcularIdadePessoa(pessoa);
+                listaPessoas.Add(novaPessoa);
+            }
+
+            return listaPessoas;
+        }
+
+        /// <summary>
+        /// Calcula a idade da pessoa
+        /// </summary>
+        /// <param name="dataNascimento"></param>
+        /// <returns></returns>
+        private static PessoaViewModel CalcularIdadePessoa(PessoaViewModel pessoa)
+        {
+            var idade = DateTime.Now.Year - pessoa.DataNascimento.Year;
+            pessoa.Idade = idade;
+            if (DateTime.Now.DayOfYear < pessoa.DataNascimento.DayOfYear)
+            {
+                pessoa.Idade = idade - 1;
+            }
+
+            return pessoa;
         }
     }
 }

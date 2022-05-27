@@ -54,6 +54,27 @@ namespace TesteStefanini.Cadastros.Infra.Data.Repositorios.Pessoas
             }
         }
 
+        public async Task<Pessoa> ObterPessoaPorCpfAsync(string cpf)
+        {
+            try
+            {
+                using var connection = Connection;
+                var query = $@"SELECT p.id AS ""Id"" ,
+                                      p.cpf AS ""Cpf"" ,
+                                      p.nome AS ""Nome"" ,
+                                      p.data_nascimento AS ""DataNascimento"" ,
+                                      p.cidade_id AS ""CidadeId""
+                               FROM [dbstefanini].[dbo].[pessoas] AS p
+                               WHERE p.cpf = @value_cpf;";
+
+                return await connection.QueryFirstOrDefaultAsync<Pessoa>(query, new { value_cpf = cpf });
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
         public async Task<IEnumerable<dynamic>> ObterTodosAsync()
         {
             try
