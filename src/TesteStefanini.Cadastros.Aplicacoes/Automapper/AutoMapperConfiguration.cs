@@ -9,7 +9,7 @@ namespace TesteStefanini.Cadastros.Aplicacoes.Automapper
             return new MapperConfiguration(configuration =>
             {
                 configuration.AddProfile<DomainToViewModelMappingProfile>();
-                //configuration.AddProfile<DtoToDomainMappingProfile>();
+                configuration.AddProfile<DtoToDomainMappingProfile>();
             });
         }
     }
